@@ -12,8 +12,25 @@ const nested = require('./nested')
 const singular = require('./singular')
 const mixins = require('../mixins')
 
-module.exports = (db, opts) => {
-  opts = Object.assign({ foreignKeySuffix: 'Id', _isFake: false }, opts)
+module.exports = (db, options) => {
+
+  const defaultOpts = {
+    foreignKeySuffix: 'Id', 
+    _isFake: false,
+    queryParameters: {
+      q: 'q',
+      _start: '_start',
+      _end: '_end',
+      _page: '_page',
+      _sort: '_sort',
+      _order: '_order',
+      _limit: '_limit',
+      _embed: '_embed',
+      _expand: '_expand',
+    }
+  }
+
+  const opts = options ? _.merge(defaultOpts, options) : defaultOpts
 
   if (typeof db === 'string') {
     db = low(new FileSync(db))
