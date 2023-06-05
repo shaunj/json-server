@@ -54,23 +54,23 @@ module.exports = (db, name, opts) => {
 
     // Remove q, _start, _end, ... from req.query to avoid filtering using those
     // parameters
-    let q = req.query[opts.queryParameters.q]
-    let _start = req.query[opts.queryParameters._start]
-    let _end = req.query[opts.queryParameters._end]
-    let _page = req.query[opts.queryParameters._page]
-    let _sort = req.query[opts.queryParameters._sort]
-    let _order = req.query[opts.queryParameters._order]
-    let _limit = req.query[opts.queryParameters._limit]
-    let _embed = req.query[opts.queryParameters._embed]
-    let _expand = req.query[opts.queryParameters._expand]
-    delete req.query[opts.queryParameters.q]
-    delete req.query[opts.queryParameters._start]
-    delete req.query[opts.queryParameters._end]
-    delete req.query[opts.queryParameters._sort]
-    delete req.query[opts.queryParameters._order]
-    delete req.query[opts.queryParameters._limit]
-    delete req.query[opts.queryParameters._embed]
-    delete req.query[opts.queryParameters._expand]
+    let q = req.query[opts.queryParameters.q];
+    let _start = req.query[opts.queryParameters._start];
+    let _end = req.query[opts.queryParameters._end];
+    let _page = req.query[opts.queryParameters._page];
+    let _sort = req.query[opts.queryParameters._sort];
+    let _order = req.query[opts.queryParameters._order];
+    let _limit = req.query[opts.queryParameters._limit];
+    let _embed = req.query[opts.queryParameters._embed];
+    let _expand = req.query[opts.queryParameters._expand];
+    delete req.query[opts.queryParameters.q];
+    delete req.query[opts.queryParameters._start];
+    delete req.query[opts.queryParameters._end];
+    delete req.query[opts.queryParameters._sort];
+    delete req.query[opts.queryParameters._order];
+    delete req.query[opts.queryParameters._limit];
+    delete req.query[opts.queryParameters._embed];
+    delete req.query[opts.queryParameters._expand];
 
     // Automatically delete query parameters that can't be found
     // in the database
